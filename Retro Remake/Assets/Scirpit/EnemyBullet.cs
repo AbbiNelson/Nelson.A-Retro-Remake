@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    private GameManger gameManger;
     public Rigidbody2D bullet;
     public float moveSpeed = 10.0f;
+
+    private bool isDead;
     void Start()
     {
         bullet = this.gameObject.GetComponent<Rigidbody2D>();
+        gameManger = FindObjectOfType<GameManger>();
     }
 
     // Update is called once per frame
@@ -22,6 +26,9 @@ public class EnemyBullet : MonoBehaviour
         if(col.gameObject.tag == "Player")
         {
             col.gameObject.SetActive(false);
+            Debug.Log("Dead");
+            gameManger.gameOver();
+            isDead = true;
         }
     }
 }
