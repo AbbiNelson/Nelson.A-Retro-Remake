@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     private Rigidbody2D rb;
     private Vector2 movement;
     public float moveSpeed = 5f;
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
