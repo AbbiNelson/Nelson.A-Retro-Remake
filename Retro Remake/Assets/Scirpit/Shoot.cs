@@ -6,7 +6,7 @@ public class Shoot : MonoBehaviour
 {
     public Transform projectileSpawn;
     public GameObject projectile;
-    public float nextFire = 1.0f;
+    public float nextFire = 0.5f;
     public float currentTime = 0.0f;
     // Start is called before the first frame update
     void Start()
